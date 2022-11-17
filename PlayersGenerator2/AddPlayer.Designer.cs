@@ -43,7 +43,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -91,15 +90,16 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 4;
+            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(196, 122);
+            this.label5.Location = new System.Drawing.Point(133, 125);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 13);
+            this.label5.Size = new System.Drawing.Size(82, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Id";
+            this.label5.Text = "Rugnummer (Id)";
             // 
             // textBox3
             // 
@@ -107,6 +107,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(25, 20);
             this.textBox3.TabIndex = 6;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox5
             // 
@@ -114,6 +115,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
             this.textBox5.TabIndex = 7;
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
             // 
             // textBox4
             // 
@@ -122,6 +124,7 @@
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 8;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // textBox1
             // 
@@ -129,6 +132,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(25, 20);
             this.textBox1.TabIndex = 9;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label6
             // 
@@ -136,13 +140,13 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(168, 49);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 31);
+            this.label6.Size = new System.Drawing.Size(195, 31);
             this.label6.TabIndex = 10;
-            this.label6.Text = "AddPlayer";
+            this.label6.Text = "Manage Player";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(64, 317);
+            this.button1.Location = new System.Drawing.Point(69, 288);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 42);
             this.button1.TabIndex = 11;
@@ -152,7 +156,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(187, 317);
+            this.button2.Location = new System.Drawing.Point(192, 288);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(108, 42);
             this.button2.TabIndex = 12;
@@ -162,7 +166,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(310, 317);
+            this.button3.Location = new System.Drawing.Point(315, 288);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(108, 42);
             this.button3.TabIndex = 13;
@@ -173,21 +177,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(63, 292);
+            this.label7.Location = new System.Drawing.Point(68, 263);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(355, 13);
             this.label7.TabIndex = 14;
             this.label7.Text = "Indien update/delete, gelieve de operatie te doen dankzij de speler zijn id.";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(187, 365);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 42);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Search";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 
@@ -205,16 +199,16 @@
             this.button5.TabIndex = 17;
             this.button5.Text = "Refresh";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // AddPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -230,8 +224,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IsMdiContainer = true;
             this.Name = "AddPlayer";
             this.Text = "AddPlayer";
+            this.Load += new System.EventHandler(this.AddPlayer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -255,7 +252,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button5;
     }
