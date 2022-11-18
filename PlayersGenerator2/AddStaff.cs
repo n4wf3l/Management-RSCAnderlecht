@@ -8,50 +8,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PlayersGenerator2
 {
-    public partial class AddPlayer : Form
+    public partial class AddStaff : Form
     {
-        public AddPlayer()
+        public AddStaff()
         {
             InitializeComponent();
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnection con1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
             con1.Open();
-            SqlCommand cmd1 = new SqlCommand("insert into AllPlayers values (@Id,@name,@age,@club,@position)", con1);
+            SqlCommand cmd1 = new SqlCommand("insert into StaffOfAnd values (@Id,@name,@age,@function)", con1);
             SqlDataAdapter da = new SqlDataAdapter(cmd1);
             DataTable dt = new DataTable();
             con1.Close();
 
-            if (textBox2.Text == String.Empty || textBox4.Text == String.Empty || comboBox1.Text == String.Empty || textBox1.Text == String.Empty || textBox3.Text == String.Empty)
+            if (textBox2.Text == String.Empty || comboBox1.Text == String.Empty || textBox1.Text == String.Empty || textBox3.Text == String.Empty)
             {
                 MessageBox.Show("Gelieve alle vakjes in te vullen");
-               
-            }else if (dt.Columns.Count > 9)
-            {
-                MessageBox.Show("Je hebt de maximum aantal spelers geselecteerd (26).");
+
             }
             else
             {
                 SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
                 con.Open();
-                SqlCommand cmd = new SqlCommand("insert into AllPlayers values (@Id,@name,@age,@club,@position)", con);
+                SqlCommand cmd = new SqlCommand("insert into StaffOfAnd values (@Id,@name,@age,@function)", con);
                 cmd.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
                 cmd.Parameters.AddWithValue("@name", textBox2.Text);
                 cmd.Parameters.AddWithValue("@age", double.Parse(textBox3.Text));
-                cmd.Parameters.AddWithValue("@club", textBox4.Text);
-                cmd.Parameters.AddWithValue("@position", comboBox1.Text);
+                cmd.Parameters.AddWithValue("@function", comboBox1.Text);
                 cmd.ExecuteNonQuery();
-
 
                 con.Close();
                 MessageBox.Show("Successfully saved");
@@ -59,9 +50,14 @@ namespace PlayersGenerator2
             }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            if (textBox2.Text == String.Empty || textBox4.Text == String.Empty || comboBox1.Text == String.Empty || textBox1.Text == String.Empty || textBox3.Text == String.Empty)
+            if (textBox2.Text == String.Empty || comboBox1.Text == String.Empty || textBox1.Text == String.Empty || textBox3.Text == String.Empty)
             {
                 MessageBox.Show("Gelieve alle vakjes in te vullen.");
             }
@@ -69,13 +65,12 @@ namespace PlayersGenerator2
             {
                 SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Update AllPlayers set name=@name, age= @age where Id = @Id", con);
+                SqlCommand cmd = new SqlCommand("Update StaffOfAnd set name=@name, age= @age, function=@function where Id = @Id", con);
 
                 cmd.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
                 cmd.Parameters.AddWithValue("@name", textBox2.Text);
                 cmd.Parameters.AddWithValue("@age", double.Parse(textBox3.Text));
-                cmd.Parameters.AddWithValue("@club", textBox4.Text);
-                cmd.Parameters.AddWithValue("@position", comboBox1.Text);
+                cmd.Parameters.AddWithValue("@function", comboBox1.Text);
                 cmd.ExecuteNonQuery();
 
                 con.Close();
@@ -84,46 +79,39 @@ namespace PlayersGenerator2
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void BtnExit_Click(object sender, EventArgs e)
         {
-            int tel = dataGridView1.Rows.Cast<DataGridViewRow>().Select(row => row.Cells["Id"].Value).Count(x => x != null);
-
-            if (textBox1.Text == String.Empty)
-            {
-                MessageBox.Show("Gelieve het rugnummer in te geven.");
-            }
-            else if (tel == 0)
-            {
-                MessageBox.Show("Deze speler bestaat niet in ons systeem.");
-            }
-
-            else
-            {
-                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
-                con.Open();
-                SqlCommand cmd = new SqlCommand("Delete AllPlayers where Id=@Id", con);
-                cmd.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Successfully deleted");
-                this.Close();
-            }
+            Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
             con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from AllPlayers", con);
+            SqlCommand cmd = new SqlCommand("Select * from StaffOfAnd", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
         }
 
-        private void AddPlayer_Load(object sender, EventArgs e)
-        {
-
+        private void button3_Click(object sender, EventArgs e)
+            {
+                if (textBox1.Text == String.Empty)
+                {
+                    MessageBox.Show("Gelieve het id in te geven.");
+                }
+                else
+                {
+                    SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Delete StaffOfAnd where Id=@Id", con);
+                    cmd.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Successfully deleted");
+                    this.Close();
+            }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,16 +122,6 @@ namespace PlayersGenerator2
             }
         }
 
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsNumber(e.KeyChar) || e.KeyChar == 8)
-            {
-                e.Handled = true;
-            }
-        }
-
-
-
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsNumber(e.KeyChar) || e.KeyChar == 8)
@@ -152,9 +130,14 @@ namespace PlayersGenerator2
             }
         }
 
-        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (char.IsNumber(e.KeyChar) || e.KeyChar == 8)
+
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsNumber(e.KeyChar) || e.KeyChar == 8)
             {
                 e.Handled = true;
             }
@@ -162,24 +145,15 @@ namespace PlayersGenerator2
 
         private void comboBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void comboBox1_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsNumber(e.KeyChar) || e.KeyChar == 8)
-            {
-                e.Handled = true;
-            }
             if (!char.IsNumber(e.KeyChar) || e.KeyChar == 8)
             {
                 e.Handled = true;
             }
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }

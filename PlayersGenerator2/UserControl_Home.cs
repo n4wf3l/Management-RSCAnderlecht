@@ -17,6 +17,11 @@ namespace PlayersGenerator2
             InitializeComponent();
         }
 
+        private void UserControl_Home_Load(object sender, EventArgs e)
+        {
+           textBox1.Text = ChangeTrainer.setValueTrainer;
+ 
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -44,5 +49,42 @@ namespace PlayersGenerator2
             }
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AddStaff addstaff = new AddStaff();
+            addstaff.ShowDialog();
+
+            if (addstaff.DialogResult == DialogResult.OK)
+            {
+                addstaff.Dispose();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            AllStaffs allstaffs = new AllStaffs();
+            allstaffs.ShowDialog();
+
+            if (allstaffs.DialogResult == DialogResult.OK)
+            {
+                allstaffs.Dispose();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            ChangeTrainer changetrainer = new ChangeTrainer();
+            changetrainer.ShowDialog();
+ 
+
+            if (changetrainer.DialogResult == DialogResult.OK)
+            {
+                changetrainer.Dispose();
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

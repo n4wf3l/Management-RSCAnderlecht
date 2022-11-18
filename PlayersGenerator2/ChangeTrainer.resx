@@ -117,7 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="textBox6.Text" xml:space="preserve">
-    <value>De PlayersGenerator werd ontworpen als onderdeel van een .NET project gegeven door Waldo Heudens. De programmeur Nawfel Ajari koos ervoor om een speciale applicatie te programmeren voor de administratie van de voetbalclub RSC Anderlecht. Hij heeft een systeem ontworpen dat talrijke spelers kan selecteren voor voetbalwedstrijden of competities. De staf en het personeel van de club heeft ook zijn plaats, elk met zijn eigen functie. Dit geldt ook voor de coach. In geval van technische problemen is een categorie "Hulp" gecreëerd om automatisch een e-mail te versturen naar de programmeur zelf, met als doel de applicatie, die nog steeds in ontwikkeling is, te verbeteren. In de toekomst zal de PlayersGenerator worden uitgebreid om de lagere categorieën van de club (B-team, U19 en U17) te beheren.</value>
-  </data>
 </root>
