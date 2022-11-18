@@ -236,13 +236,6 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ProgrammingDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ProgrammingDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ProgrammingDB.mdf</DependentUpon>
-    </Content>
     <None Include="Resources\Jupiler_Logo.png" />
     <None Include="Resources\sncblogo.png" />
     <None Include="Resources\LogoProximus.png" />
