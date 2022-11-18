@@ -159,5 +159,10 @@ namespace PlayersGenerator2
                 e.Handled = true;
             }
         }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

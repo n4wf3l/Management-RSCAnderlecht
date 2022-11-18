@@ -27,8 +27,6 @@ namespace PlayersGenerator2
 
         private void Main_Load(object sender, EventArgs e)
         {
-            add_UControls(new UserControl_Home());
-            panel2_home.BackColor = Color.BlueViolet;
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -42,7 +40,7 @@ namespace PlayersGenerator2
             {
                 case "Btn_Home":
                     add_UControls(new UserControl_Home());
-                    panel2_home.BackColor = Color.BlueViolet;
+                    panel2_manage.BackColor = Color.BlueViolet;
                     break;
                 case "Btn_About":
                     add_UControls(new UserControl_About());
@@ -72,6 +70,14 @@ namespace PlayersGenerator2
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1Window = new Form1();
+            form1Window.Show();
 
         }
     }

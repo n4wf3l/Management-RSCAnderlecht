@@ -26,8 +26,8 @@ namespace PlayersGenerator2
         
             
           this.Hide();
-          Main mainWindow = new Main();
-                mainWindow.Show();
+          Loading loadingwindow = new Loading();
+          loadingwindow.Show();
             
 
         }

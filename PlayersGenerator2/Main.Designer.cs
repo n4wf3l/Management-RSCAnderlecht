@@ -39,19 +39,20 @@
             this.Btn_Parternship = new System.Windows.Forms.Button();
             this.panel3_help = new System.Windows.Forms.Panel();
             this.Btn_Help = new System.Windows.Forms.Button();
+            this.panel2_manage = new System.Windows.Forms.Panel();
+            this.Btn_Home = new System.Windows.Forms.Button();
             this.panel2_about = new System.Windows.Forms.Panel();
             this.Btn_About = new System.Windows.Forms.Button();
-            this.panel2_home = new System.Windows.Forms.Panel();
-            this.Btn_Home = new System.Windows.Forms.Button();
             this.panel_main = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnExit)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4_parternship.SuspendLayout();
             this.panel3_help.SuspendLayout();
+            this.panel2_manage.SuspendLayout();
             this.panel2_about.SuspendLayout();
-            this.panel2_home.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -85,6 +86,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.BtnExit);
             this.panel1.Controls.Add(this.label1);
@@ -128,8 +130,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.panel4_parternship, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel3_help, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2_about, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2_home, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2_manage, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel2_about, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 50);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -194,17 +196,45 @@
             this.Btn_Help.UseVisualStyleBackColor = false;
             this.Btn_Help.Click += new System.EventHandler(this.Btn_Click);
             // 
+            // panel2_manage
+            // 
+            this.panel2_manage.BackColor = System.Drawing.Color.Silver;
+            this.panel2_manage.Controls.Add(this.Btn_Home);
+            this.panel2_manage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2_manage.Location = new System.Drawing.Point(205, 5);
+            this.panel2_manage.Margin = new System.Windows.Forms.Padding(5);
+            this.panel2_manage.Name = "panel2_manage";
+            this.panel2_manage.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.panel2_manage.Size = new System.Drawing.Size(190, 72);
+            this.panel2_manage.TabIndex = 1;
+            // 
+            // Btn_Home
+            // 
+            this.Btn_Home.BackColor = System.Drawing.Color.Silver;
+            this.Btn_Home.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Btn_Home.FlatAppearance.BorderSize = 0;
+            this.Btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Home.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Home.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.Btn_Home.Location = new System.Drawing.Point(0, 0);
+            this.Btn_Home.Name = "Btn_Home";
+            this.Btn_Home.Size = new System.Drawing.Size(190, 67);
+            this.Btn_Home.TabIndex = 6;
+            this.Btn_Home.Text = "Manage";
+            this.Btn_Home.UseVisualStyleBackColor = false;
+            this.Btn_Home.Click += new System.EventHandler(this.Btn_Click);
+            // 
             // panel2_about
             // 
-            this.panel2_about.BackColor = System.Drawing.Color.Silver;
+            this.panel2_about.BackColor = System.Drawing.Color.BlueViolet;
             this.panel2_about.Controls.Add(this.Btn_About);
             this.panel2_about.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2_about.Location = new System.Drawing.Point(205, 5);
+            this.panel2_about.Location = new System.Drawing.Point(5, 5);
             this.panel2_about.Margin = new System.Windows.Forms.Padding(5);
             this.panel2_about.Name = "panel2_about";
             this.panel2_about.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.panel2_about.Size = new System.Drawing.Size(190, 72);
-            this.panel2_about.TabIndex = 1;
+            this.panel2_about.TabIndex = 0;
             // 
             // Btn_About
             // 
@@ -222,34 +252,6 @@
             this.Btn_About.UseVisualStyleBackColor = false;
             this.Btn_About.Click += new System.EventHandler(this.Btn_Click);
             // 
-            // panel2_home
-            // 
-            this.panel2_home.BackColor = System.Drawing.Color.BlueViolet;
-            this.panel2_home.Controls.Add(this.Btn_Home);
-            this.panel2_home.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2_home.Location = new System.Drawing.Point(5, 5);
-            this.panel2_home.Margin = new System.Windows.Forms.Padding(5);
-            this.panel2_home.Name = "panel2_home";
-            this.panel2_home.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panel2_home.Size = new System.Drawing.Size(190, 72);
-            this.panel2_home.TabIndex = 0;
-            // 
-            // Btn_Home
-            // 
-            this.Btn_Home.BackColor = System.Drawing.Color.Silver;
-            this.Btn_Home.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Btn_Home.FlatAppearance.BorderSize = 0;
-            this.Btn_Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Home.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Home.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.Btn_Home.Location = new System.Drawing.Point(0, 0);
-            this.Btn_Home.Name = "Btn_Home";
-            this.Btn_Home.Size = new System.Drawing.Size(190, 67);
-            this.Btn_Home.TabIndex = 6;
-            this.Btn_Home.Text = "Home";
-            this.Btn_Home.UseVisualStyleBackColor = false;
-            this.Btn_Home.Click += new System.EventHandler(this.Btn_Click);
-            // 
             // panel_main
             // 
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -258,6 +260,16 @@
             this.panel_main.Size = new System.Drawing.Size(800, 318);
             this.panel_main.TabIndex = 5;
             this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(684, 7);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "disconnect";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Main
             // 
@@ -280,8 +292,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel4_parternship.ResumeLayout(false);
             this.panel3_help.ResumeLayout(false);
+            this.panel2_manage.ResumeLayout(false);
             this.panel2_about.ResumeLayout(false);
-            this.panel2_home.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -297,12 +309,13 @@
         private System.Windows.Forms.Button Btn_Parternship;
         private System.Windows.Forms.Panel panel3_help;
         private System.Windows.Forms.Button Btn_Help;
+        private System.Windows.Forms.Panel panel2_manage;
+        private System.Windows.Forms.Button Btn_Home;
         private System.Windows.Forms.Panel panel2_about;
         private System.Windows.Forms.Button Btn_About;
-        private System.Windows.Forms.Panel panel2_home;
-        private System.Windows.Forms.Button Btn_Home;
         private System.Windows.Forms.PictureBox BtnExit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel_main;
+        private System.Windows.Forms.Button button3;
     }
 }

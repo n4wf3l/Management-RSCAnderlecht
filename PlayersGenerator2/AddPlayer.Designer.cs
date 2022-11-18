@@ -45,7 +45,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
+            this.BtnExit = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -201,12 +203,24 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // BtnExit
+            // 
+            this.BtnExit.Image = global::PlayersGenerator2.Properties.Resources.closewindowpng;
+            this.BtnExit.Location = new System.Drawing.Point(775, 1);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(23, 25);
+            this.BtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnExit.TabIndex = 19;
+            this.BtnExit.TabStop = false;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            // 
             // AddPlayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label7);
@@ -230,6 +244,7 @@
             this.Text = "AddPlayer";
             this.Load += new System.EventHandler(this.AddPlayer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +269,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox BtnExit;
     }
 }
