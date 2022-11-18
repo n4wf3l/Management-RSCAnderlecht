@@ -35,8 +35,8 @@ namespace PlayersGenerator2
             if (textBox2.Text == String.Empty || textBox4.Text == String.Empty || comboBox1.Text == String.Empty || textBox1.Text == String.Empty || textBox3.Text == String.Empty)
             {
                 MessageBox.Show("Gelieve alle vakjes in te vullen");
-               
-            }else if (dt.Columns.Count > 9)
+
+            } else if (dt.Columns.Count > 9)
             {
                 MessageBox.Show("Je hebt de maximum aantal spelers geselecteerd (26).");
             }
@@ -86,6 +86,22 @@ namespace PlayersGenerator2
 
         private void button3_Click(object sender, EventArgs e)
         {
+            VerwijderSpelers();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select * from AllPlayers", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+        
+        private void VerwijderSpelers()
+        {
             int tel = dataGridView1.Rows.Cast<DataGridViewRow>().Select(row => row.Cells["Id"].Value).Count(x => x != null);
 
             if (textBox1.Text == String.Empty)
@@ -109,17 +125,7 @@ namespace PlayersGenerator2
                 this.Close();
             }
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from AllPlayers", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-        }
+        
 
         private void AddPlayer_Load(object sender, EventArgs e)
         {
