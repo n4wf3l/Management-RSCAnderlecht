@@ -97,11 +97,17 @@ namespace PlayersGenerator2
 
         private void button3_Click(object sender, EventArgs e)
             {
-                if (textBox1.Text == String.Empty)
+            int tel = dataGridView1.Rows.Cast<DataGridViewRow>().Select(row => row.Cells["Id"].Value).Count(x => x != null);
+            if (textBox1.Text == String.Empty)
                 {
                     MessageBox.Show("Gelieve het id in te geven.");
                 }
-                else
+           
+            else if (tel == 0)
+            {
+                MessageBox.Show("Deze personeel bestaat niet in ons systeem.");
+            }
+            else
                 {
                     SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
                     con.Open();

@@ -4,6 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,21 +23,34 @@ namespace PlayersGenerator2
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            try
+            if (txtTo.Text == "" || txtSubject.Text == "" || txtMessage.Text == "")
             {
-                Outlook._Application _app = new Outlook.Application();
-                Outlook.MailItem mail = (Outlook.MailItem)_app.CreateItem(Outlook.OlItemType.olMailItem);
-                mail.To = txtTo.Text;
-                mail.Subject = txtSubject.Text;
-                mail.Body = txtMessage.Text;
-                mail.Importance = Outlook.OlImportance.olImportanceNormal;
-                ((Outlook._MailItem)mail).Send();
-                MessageBox.Show("Je bericht is successvol verzonden.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Gelieve alle velden in te vullen.");
             }
+            else
+            {
+                try
+                {
+                    SmtpClient smtpClient = new SmtpClient("smtp-mail.outlook.com");
+                    smtpClient.Port = 587;
+                    smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    smtpClient.UseDefaultCredentials = false;
+                    System.Net.NetworkCredential cd = new System.Net.NetworkCredential("nawfel.ajari@student.ehb.be", "nawnaw1030");
+                    smtpClient.EnableSsl = true;
+                    smtpClient.Credentials = cd;
+                    MailMessage mail = new MailMessage("nawfel.ajari@student.ehb.be", txtTo.Text);
+                    mail.Subject = txtSubject.Text;
+                    mail.Body = txtMessage.Text;
+                    smtpClient.Send(mail);
+                    MessageBox.Show("Email is verzonden !");
+
+                }
+                catch (Exception)
+                {
+                    throw;
+
+                }
             }
         }
     }
+}
