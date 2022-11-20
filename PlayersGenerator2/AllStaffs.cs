@@ -37,6 +37,7 @@ namespace PlayersGenerator2
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+
         }
     }
 }

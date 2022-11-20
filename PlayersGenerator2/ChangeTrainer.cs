@@ -16,7 +16,7 @@ namespace PlayersGenerator2
     {
         public static string setValueTrainer;
 
-        SqlConnection con1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\CurrentTrainer.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\CurrentTrainerOfAnd.mdf;Integrated Security=True;Connect Timeout=30");
 
         public ChangeTrainer()
         {
@@ -25,8 +25,8 @@ namespace PlayersGenerator2
 
         private void UpdateGrid()
         {
-            ChangeTrainerLinqDataContext ctl = new ChangeTrainerLinqDataContext();
-            var selectQuery = from a in ctl.GetTable<CurrentTrainerAnd>()
+            CurrentTrainerOfAndDataContext ctl = new CurrentTrainerOfAndDataContext();
+            var selectQuery = from a in ctl.GetTable<CurrentTrainerOfAnd>()
                               select a;
             dataGridView1.DataSource = selectQuery;
 
@@ -51,13 +51,13 @@ namespace PlayersGenerator2
             }
             else {
            
-            ChangeTrainerLinqDataContext db = new ChangeTrainerLinqDataContext();
-            CurrentTrainerAnd cta = db.CurrentTrainerAnds.FirstOrDefault(cta1 => cta1.Id.Equals(textBox1.Text));
+            CurrentTrainerOfAndDataContext db = new CurrentTrainerOfAndDataContext();
+            CurrentTrainerOfAnd cta = db.CurrentTrainerOfAnds.FirstOrDefault(cta1 => cta1.Id.Equals(textBox1.Text));
             cta.name = textBoxTrainer.Text;
             cta.age = double.Parse(textBox3.Text);
             cta.exclub = textBox4.Text;
             db.SubmitChanges();
-            MessageBox.Show("Trainer geüpdate.");
+            MessageBox.Show("Trainer geüpdate. Gelieve de ManagePagina te refreshen.");
             UpdateGrid();
                 //Data meenemen naar vorige Form
                 setValueTrainer = textBoxTrainer.Text;

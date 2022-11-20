@@ -23,59 +23,59 @@ namespace PlayersGenerator2
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AllPlayers")]
-	public partial class ChangeTrainerLinqDataContext : System.Data.Linq.DataContext
+	public partial class CurrentTrainerOfAndDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertCurrentTrainerAnd(CurrentTrainerAnd instance);
-    partial void UpdateCurrentTrainerAnd(CurrentTrainerAnd instance);
-    partial void DeleteCurrentTrainerAnd(CurrentTrainerAnd instance);
+    partial void InsertCurrentTrainerOfAnd(CurrentTrainerOfAnd instance);
+    partial void UpdateCurrentTrainerOfAnd(CurrentTrainerOfAnd instance);
+    partial void DeleteCurrentTrainerOfAnd(CurrentTrainerOfAnd instance);
     #endregion
 		
-		public ChangeTrainerLinqDataContext() : 
+		public CurrentTrainerOfAndDataContext() : 
 				base(global::PlayersGenerator2.Properties.Settings.Default.AllPlayersConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ChangeTrainerLinqDataContext(string connection) : 
+		public CurrentTrainerOfAndDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ChangeTrainerLinqDataContext(System.Data.IDbConnection connection) : 
+		public CurrentTrainerOfAndDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ChangeTrainerLinqDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public CurrentTrainerOfAndDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public ChangeTrainerLinqDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public CurrentTrainerOfAndDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<CurrentTrainerAnd> CurrentTrainerAnds
+		public System.Data.Linq.Table<CurrentTrainerOfAnd> CurrentTrainerOfAnds
 		{
 			get
 			{
-				return this.GetTable<CurrentTrainerAnd>();
+				return this.GetTable<CurrentTrainerOfAnd>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CurrentTrainer")]
-	public partial class CurrentTrainerAnd : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CurrentTrainerOfAnd")]
+	public partial class CurrentTrainerOfAnd : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -102,7 +102,7 @@ namespace PlayersGenerator2
     partial void OnexclubChanged();
     #endregion
 		
-		public CurrentTrainerAnd()
+		public CurrentTrainerOfAnd()
 		{
 			OnCreated();
 		}

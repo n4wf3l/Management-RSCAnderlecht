@@ -46,21 +46,29 @@
             // 
             // button2
             // 
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(245, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(122, 46);
             this.button2.TabIndex = 4;
-            this.button2.Text = "View ListPlayer";
+            this.button2.Text = "Spelerslijst";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(117, 19);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 46);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Manage Player";
+            this.button1.Text = "Beheren";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -85,26 +93,38 @@
             // 
             // button4
             // 
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(117, 92);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 46);
             this.button4.TabIndex = 8;
-            this.button4.Text = "Manage Staff";
+            this.button4.Text = "Beheren";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(245, 92);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(122, 46);
             this.button6.TabIndex = 10;
-            this.button6.Text = "View ListStaff";
+            this.button6.Text = "Staflijst";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(624, 37);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(60, 27);
