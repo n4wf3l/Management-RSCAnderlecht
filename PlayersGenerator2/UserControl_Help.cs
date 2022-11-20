@@ -35,10 +35,10 @@ namespace PlayersGenerator2
                     smtpClient.Port = 587;
                     smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;
                     smtpClient.UseDefaultCredentials = false;
-                    System.Net.NetworkCredential cd = new System.Net.NetworkCredential("nawfel.ajari@student.ehb.be", "nawnaw1030");
+                    System.Net.NetworkCredential cd = new System.Net.NetworkCredential("je_email", "je_wachtwoord"); // Echte gegevens noteren anders crasht de programma van de user (ik doe het niet want Github public)
                     smtpClient.EnableSsl = true;
                     smtpClient.Credentials = cd;
-                    MailMessage mail = new MailMessage("nawfel.ajari@student.ehb.be", txtTo.Text);
+                    MailMessage mail = new MailMessage("je_email", txtTo.Text); // Hier ook aanpassen
                     mail.Subject = txtSubject.Text;
                     mail.Body = txtMessage.Text;
                     smtpClient.Send(mail);
