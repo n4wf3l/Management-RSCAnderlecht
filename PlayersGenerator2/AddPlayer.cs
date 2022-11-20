@@ -34,11 +34,7 @@ namespace PlayersGenerator2
 
             if (textBox2.Text == String.Empty || textBox4.Text == String.Empty || comboBox1.Text == String.Empty || textBox1.Text == String.Empty || textBox3.Text == String.Empty)
             {
-                MessageBox.Show("Gelieve alle vakjes in te vullen");
-
-            } else if (dt.Columns.Count > 9)
-            {
-                MessageBox.Show("Je hebt de maximum aantal spelers geselecteerd (26).");
+                MessageBox.Show("Gelieve alle vakken in te vullen.");
             }
             else
             {
@@ -54,7 +50,7 @@ namespace PlayersGenerator2
 
 
                 con.Close();
-                MessageBox.Show("Successfully saved");
+                MessageBox.Show("Speler toegevoegd !");
                 this.Close();
             }
         }
@@ -63,7 +59,7 @@ namespace PlayersGenerator2
         {
             if (textBox2.Text == String.Empty || textBox4.Text == String.Empty || comboBox1.Text == String.Empty || textBox1.Text == String.Empty || textBox3.Text == String.Empty)
             {
-                MessageBox.Show("Gelieve alle vakjes in te vullen.");
+                MessageBox.Show("Gelieve alle vakken in te vullen.");
             }
             else
             {
@@ -79,7 +75,7 @@ namespace PlayersGenerator2
                 cmd.ExecuteNonQuery();
 
                 con.Close();
-                MessageBox.Show("Successfully updated");
+                MessageBox.Show("Speler geüpdate !");
                 this.Close();
             }
         }
@@ -121,7 +117,7 @@ namespace PlayersGenerator2
                 cmd.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Successfully deleted");
+                MessageBox.Show("Speler verwijderd !");
                 this.Close();
             }
         }

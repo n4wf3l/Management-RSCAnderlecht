@@ -12,6 +12,11 @@ namespace PlayersGenerator2
 {
     public partial class Main : Form
     {
+
+    //Bewegende Form
+        int mov;
+        int movX;
+        int movY;
         public Main()
         {
             InitializeComponent();
@@ -27,6 +32,8 @@ namespace PlayersGenerator2
 
         private void Main_Load(object sender, EventArgs e)
         {
+            //Bewegende Form via bovenste panel
+            this.Location = Screen.AllScreens[1].WorkingArea.Location;
         }
 
         private void Btn_Click(object sender, EventArgs e)
@@ -79,6 +86,25 @@ namespace PlayersGenerator2
             Form1 form1Window = new Form1();
             form1Window.Show();
 
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1){
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
         }
     }
 

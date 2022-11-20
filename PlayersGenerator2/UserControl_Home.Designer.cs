@@ -68,7 +68,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 46);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Beheren";
+            this.button1.Text = "Selectiebeheer";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -101,7 +101,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 46);
             this.button4.TabIndex = 8;
-            this.button4.Text = "Beheren";
+            this.button4.Text = "Stafbeheer";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 

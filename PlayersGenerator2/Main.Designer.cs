@@ -33,6 +33,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BtnExit = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4_parternship = new System.Windows.Forms.Panel();
             this.Btn_Parternship = new System.Windows.Forms.Button();
@@ -43,16 +45,14 @@
             this.panel2_about = new System.Windows.Forms.Panel();
             this.Btn_About = new System.Windows.Forms.Button();
             this.panel_main = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.BtnExit = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnExit)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel4_parternship.SuspendLayout();
             this.panel3_help.SuspendLayout();
             this.panel2_manage.SuspendLayout();
             this.panel2_about.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnExit)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,6 +96,9 @@
             this.panel1.Size = new System.Drawing.Size(800, 50);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             // 
             // button3
             // 
@@ -110,6 +113,27 @@
             this.button3.Text = "Log out";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PlayersGenerator2.Properties.Resources.anderlechtlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // BtnExit
+            // 
+            this.BtnExit.Image = global::PlayersGenerator2.Properties.Resources.closewindowpng;
+            this.BtnExit.Location = new System.Drawing.Point(784, 0);
+            this.BtnExit.Name = "BtnExit";
+            this.BtnExit.Size = new System.Drawing.Size(16, 17);
+            this.BtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BtnExit.TabIndex = 1;
+            this.BtnExit.TabStop = false;
+            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -254,27 +278,6 @@
             this.panel_main.TabIndex = 5;
             this.panel_main.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_main_Paint);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PlayersGenerator2.Properties.Resources.anderlechtlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // BtnExit
-            // 
-            this.BtnExit.Image = global::PlayersGenerator2.Properties.Resources.closewindowpng;
-            this.BtnExit.Location = new System.Drawing.Point(784, 0);
-            this.BtnExit.Name = "BtnExit";
-            this.BtnExit.Size = new System.Drawing.Size(16, 17);
-            this.BtnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.BtnExit.TabIndex = 1;
-            this.BtnExit.TabStop = false;
-            this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,13 +294,13 @@
             this.Text = "Main";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BtnExit)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel4_parternship.ResumeLayout(false);
             this.panel3_help.ResumeLayout(false);
             this.panel2_manage.ResumeLayout(false);
             this.panel2_about.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BtnExit)).EndInit();
             this.ResumeLayout(false);
 
         }

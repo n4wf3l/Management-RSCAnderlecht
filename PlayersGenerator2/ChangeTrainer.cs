@@ -47,7 +47,7 @@ namespace PlayersGenerator2
         {
             if (textBoxTrainer.Text == "" || textBox3.Text == "" || textBox4.Text == "")
             {
-                MessageBox.Show("Gelieve alle vakjes in te vullen");
+                MessageBox.Show("Gelieve alle vakken in te vullen");
             }
             else {
            
@@ -57,7 +57,7 @@ namespace PlayersGenerator2
             cta.age = double.Parse(textBox3.Text);
             cta.exclub = textBox4.Text;
             db.SubmitChanges();
-            MessageBox.Show("Trainer geüpdate. Gelieve de ManagePagina te refreshen.");
+            MessageBox.Show("Trainer geüpdate, gelieve de Managepagina te refreshen.");
             UpdateGrid();
                 //Data meenemen naar vorige Form
                 setValueTrainer = textBoxTrainer.Text;
