@@ -161,5 +161,20 @@ namespace PlayersGenerator2
             }
 
         }
+
+        private void btn_Clear1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
+
+        private void btn_Clear2_Click(object sender, EventArgs e)
+        {
+            textBox2.Clear();
+        }
+
+        private void btn_Clear3_Click(object sender, EventArgs e)
+        {
+            textBox3.Clear();
+        }
     }
 }

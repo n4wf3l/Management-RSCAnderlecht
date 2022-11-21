@@ -78,9 +78,9 @@
             this.Administration.Font = new System.Drawing.Font("Segoe UI Semibold", 20.75F, System.Drawing.FontStyle.Bold);
             this.Administration.Location = new System.Drawing.Point(14, 13);
             this.Administration.Name = "Administration";
-            this.Administration.Size = new System.Drawing.Size(205, 38);
+            this.Administration.Size = new System.Drawing.Size(187, 38);
             this.Administration.TabIndex = 5;
-            this.Administration.Text = "Administration";
+            this.Administration.Text = "Administratie";
             // 
             // label1
             // 
@@ -129,7 +129,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(60, 27);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Change";
+            this.button3.Text = "Verander";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 

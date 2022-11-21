@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_About));
-            this.Administration = new System.Windows.Forms.Label();
+            this.OverOns = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -37,16 +37,16 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // Administration
+            // OverOns
             // 
-            this.Administration.AutoSize = true;
-            this.Administration.BackColor = System.Drawing.Color.Silver;
-            this.Administration.Font = new System.Drawing.Font("Segoe UI Semibold", 20.75F, System.Drawing.FontStyle.Bold);
-            this.Administration.Location = new System.Drawing.Point(18, 11);
-            this.Administration.Name = "Administration";
-            this.Administration.Size = new System.Drawing.Size(96, 38);
-            this.Administration.TabIndex = 23;
-            this.Administration.Text = "About";
+            this.OverOns.AutoSize = true;
+            this.OverOns.BackColor = System.Drawing.Color.Silver;
+            this.OverOns.Font = new System.Drawing.Font("Segoe UI Semibold", 20.75F, System.Drawing.FontStyle.Bold);
+            this.OverOns.Location = new System.Drawing.Point(18, 11);
+            this.OverOns.Name = "OverOns";
+            this.OverOns.Size = new System.Drawing.Size(134, 38);
+            this.OverOns.TabIndex = 23;
+            this.OverOns.Text = "Over Ons";
             // 
             // pictureBox1
             // 
@@ -87,7 +87,7 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.Administration);
+            this.Controls.Add(this.OverOns);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UserControl_About";
             this.Size = new System.Drawing.Size(900, 500);
@@ -100,7 +100,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label Administration;
+        private System.Windows.Forms.Label OverOns;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox6;

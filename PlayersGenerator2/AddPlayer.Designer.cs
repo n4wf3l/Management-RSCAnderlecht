@@ -48,6 +48,10 @@
             this.BtnExit = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Clear4 = new System.Windows.Forms.Button();
+            this.btn_Clear3 = new System.Windows.Forms.Button();
+            this.btn_Clear2 = new System.Windows.Forms.Button();
+            this.btn_Clear1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BtnExit)).BeginInit();
@@ -245,6 +249,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_Clear4);
+            this.groupBox1.Controls.Add(this.btn_Clear3);
+            this.groupBox1.Controls.Add(this.btn_Clear2);
+            this.groupBox1.Controls.Add(this.btn_Clear1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -266,6 +274,62 @@
             this.groupBox1.Size = new System.Drawing.Size(373, 343);
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
+            // 
+            // btn_Clear4
+            // 
+            this.btn_Clear4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.btn_Clear4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.btn_Clear4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Clear4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clear4.Location = new System.Drawing.Point(308, 150);
+            this.btn_Clear4.Name = "btn_Clear4";
+            this.btn_Clear4.Size = new System.Drawing.Size(22, 23);
+            this.btn_Clear4.TabIndex = 42;
+            this.btn_Clear4.Text = "←";
+            this.btn_Clear4.UseVisualStyleBackColor = true;
+            this.btn_Clear4.Click += new System.EventHandler(this.btn_Clear4_Click);
+            // 
+            // btn_Clear3
+            // 
+            this.btn_Clear3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.btn_Clear3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.btn_Clear3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Clear3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clear3.Location = new System.Drawing.Point(212, 124);
+            this.btn_Clear3.Name = "btn_Clear3";
+            this.btn_Clear3.Size = new System.Drawing.Size(22, 23);
+            this.btn_Clear3.TabIndex = 41;
+            this.btn_Clear3.Text = "←";
+            this.btn_Clear3.UseVisualStyleBackColor = true;
+            this.btn_Clear3.Click += new System.EventHandler(this.btn_Clear3_Click);
+            // 
+            // btn_Clear2
+            // 
+            this.btn_Clear2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.btn_Clear2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.btn_Clear2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Clear2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clear2.Location = new System.Drawing.Point(308, 98);
+            this.btn_Clear2.Name = "btn_Clear2";
+            this.btn_Clear2.Size = new System.Drawing.Size(22, 23);
+            this.btn_Clear2.TabIndex = 40;
+            this.btn_Clear2.Text = "←";
+            this.btn_Clear2.UseVisualStyleBackColor = true;
+            this.btn_Clear2.Click += new System.EventHandler(this.btn_Clear2_Click);
+            // 
+            // btn_Clear1
+            // 
+            this.btn_Clear1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BlueViolet;
+            this.btn_Clear1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BlueViolet;
+            this.btn_Clear1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Clear1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Clear1.Location = new System.Drawing.Point(212, 72);
+            this.btn_Clear1.Name = "btn_Clear1";
+            this.btn_Clear1.Size = new System.Drawing.Size(22, 23);
+            this.btn_Clear1.TabIndex = 39;
+            this.btn_Clear1.Text = "←";
+            this.btn_Clear1.UseVisualStyleBackColor = true;
+            this.btn_Clear1.Click += new System.EventHandler(this.btn_Clear1_Click);
             // 
             // pictureBox1
             // 
@@ -325,5 +389,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_Clear4;
+        private System.Windows.Forms.Button btn_Clear3;
+        private System.Windows.Forms.Button btn_Clear2;
+        private System.Windows.Forms.Button btn_Clear1;
     }
 }

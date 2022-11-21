@@ -48,11 +48,11 @@
             this.Administration.AutoSize = true;
             this.Administration.BackColor = System.Drawing.Color.Silver;
             this.Administration.Font = new System.Drawing.Font("Segoe UI Semibold", 20.75F, System.Drawing.FontStyle.Bold);
-            this.Administration.Location = new System.Drawing.Point(19, 22);
+            this.Administration.Location = new System.Drawing.Point(15, 13);
             this.Administration.Name = "Administration";
-            this.Administration.Size = new System.Drawing.Size(77, 38);
+            this.Administration.Size = new System.Drawing.Size(136, 38);
             this.Administration.TabIndex = 6;
-            this.Administration.Text = "Help";
+            this.Administration.Text = "Helpdesk";
             // 
             // label1
             // 
@@ -99,9 +99,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(21, 82);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.Size = new System.Drawing.Size(61, 13);
             this.label4.TabIndex = 15;
-            this.label4.Text = "Message";
+            this.label4.Text = "Boodschap";
             // 
             // btnSend
             // 

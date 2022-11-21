@@ -15,7 +15,6 @@ namespace PlayersGenerator2
     public partial class ChangeTrainer : Form
     {
         public static string setValueTrainer;
-
         SqlConnection con1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\CurrentTrainerOfAnd.mdf;Integrated Security=True;Connect Timeout=30");
 
         public ChangeTrainer()
@@ -39,18 +38,19 @@ namespace PlayersGenerator2
             textBox3.Text = "";
             textBox4.Text = "";
         }
+
         private void ChangeTrainer_Load(object sender, EventArgs e)
         {
             UpdateGrid();
         }
+
         public void button1_Click(object sender, EventArgs e)
         {
             if (textBoxTrainer.Text == "" || textBox3.Text == "" || textBox4.Text == "")
             {
                 MessageBox.Show("Gelieve alle vakken in te vullen");
             }
-            else {
-           
+            else {           
             CurrentTrainerOfAndDataContext db = new CurrentTrainerOfAndDataContext();
             CurrentTrainerOfAnd cta = db.CurrentTrainerOfAnds.FirstOrDefault(cta1 => cta1.Id.Equals(textBox1.Text));
             cta.name = textBoxTrainer.Text;
@@ -63,8 +63,6 @@ namespace PlayersGenerator2
                 setValueTrainer = textBoxTrainer.Text;
                 // Close
                 this.Close();
- 
-
             }
         }
 
@@ -105,4 +103,4 @@ namespace PlayersGenerator2
             }
         }
     }
-    }
+}

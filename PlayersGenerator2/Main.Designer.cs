@@ -209,7 +209,7 @@
             this.Btn_Help.Name = "Btn_Help";
             this.Btn_Help.Size = new System.Drawing.Size(190, 67);
             this.Btn_Help.TabIndex = 6;
-            this.Btn_Help.Text = "Help";
+            this.Btn_Help.Text = "Helpdesk";
             this.Btn_Help.UseVisualStyleBackColor = false;
             this.Btn_Help.Click += new System.EventHandler(this.Btn_Click);
             // 
@@ -237,7 +237,7 @@
             this.Btn_Home.Name = "Btn_Home";
             this.Btn_Home.Size = new System.Drawing.Size(190, 67);
             this.Btn_Home.TabIndex = 6;
-            this.Btn_Home.Text = "Manage";
+            this.Btn_Home.Text = "Beheer";
             this.Btn_Home.UseVisualStyleBackColor = false;
             this.Btn_Home.Click += new System.EventHandler(this.Btn_Click);
             // 
@@ -265,7 +265,7 @@
             this.Btn_About.Name = "Btn_About";
             this.Btn_About.Size = new System.Drawing.Size(190, 67);
             this.Btn_About.TabIndex = 6;
-            this.Btn_About.Text = "About";
+            this.Btn_About.Text = "Over Ons";
             this.Btn_About.UseVisualStyleBackColor = false;
             this.Btn_About.Click += new System.EventHandler(this.Btn_Click);
             // 

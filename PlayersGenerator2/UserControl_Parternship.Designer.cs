@@ -43,7 +43,7 @@
             // 
             this.Partnership.AutoSize = true;
             this.Partnership.Font = new System.Drawing.Font("Segoe UI Semibold", 20.75F, System.Drawing.FontStyle.Bold);
-            this.Partnership.Location = new System.Drawing.Point(31, 24);
+            this.Partnership.Location = new System.Drawing.Point(18, 11);
             this.Partnership.Name = "Partnership";
             this.Partnership.Size = new System.Drawing.Size(161, 38);
             this.Partnership.TabIndex = 6;
