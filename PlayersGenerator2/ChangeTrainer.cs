@@ -57,7 +57,7 @@ namespace PlayersGenerator2
             cta.age = double.Parse(textBox3.Text);
             cta.exclub = textBox4.Text;
             db.SubmitChanges();
-            MessageBox.Show("Trainer geüpdate, gelieve de Managepagina te refreshen.");
+            MessageBox.Show("Trainer geüpdate. Gelieve het beheerpagina te refreshen.");
             UpdateGrid();
                 //Data meenemen naar vorige Form
                 setValueTrainer = textBoxTrainer.Text;

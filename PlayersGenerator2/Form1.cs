@@ -33,23 +33,29 @@ namespace PlayersGenerator2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\loginForm.mdf;Integrated Security=True;Connect Timeout=30");
-            SqlDataAdapter sda = new SqlDataAdapter("select count(*) from login where username ='" + textBox1.Text + "' and password='" + textBox2.Text + "'", conn);
+
+            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT (*) FROM tblLogin WHERE Username = '" + textBox1.Text + "' AND password = '" + textBox2.Text + "'", conn);
             DataTable dt = new DataTable();
+            sda.Fill(dt);
 
-            if (textBox1.Text == String.Empty || textBox2.Text == String.Empty) 
+            if (dt.Rows[0][0].ToString() == "1")
             {
-                MessageBox.Show("Gelieve alle vakjes in te vullen");
-
-            }
-            else
-            {
-
                 this.Hide();
                 Loading loadingwindow = new Loading();
                 loadingwindow.Show();
-
-
+            }
+            else if (textBox1.Text == "")
+            {
+                MessageBox.Show("Gelieve de username in te typen.");
+            }
+            else if (textBox2.Text == "")
+            {
+                MessageBox.Show("Gelieve het wachtwoord in te typen.");
+            }
+            else
+            {
+                MessageBox.Show("Je username of wachtwoord is onjuist.");
             }
         }
 
@@ -78,13 +84,6 @@ namespace PlayersGenerator2
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mov = 0;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            LoginTest logintest = new LoginTest();
-            logintest.Show();
         }
     }
 }
