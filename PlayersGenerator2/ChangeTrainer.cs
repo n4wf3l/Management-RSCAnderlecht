@@ -102,5 +102,20 @@ namespace PlayersGenerator2
                 e.Handled = true;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBoxTrainer.Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox3.Clear();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox4.Clear();
+        }
     }
 }
