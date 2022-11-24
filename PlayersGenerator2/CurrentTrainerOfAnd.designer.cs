@@ -22,7 +22,7 @@ namespace PlayersGenerator2
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AllPlayers")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="AllPlayers-Nawfel-AJR-2.mdf")]
 	public partial class CurrentTrainerOfAndDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -33,10 +33,13 @@ namespace PlayersGenerator2
     partial void InsertCurrentTrainerOfAnd(CurrentTrainerOfAnd instance);
     partial void UpdateCurrentTrainerOfAnd(CurrentTrainerOfAnd instance);
     partial void DeleteCurrentTrainerOfAnd(CurrentTrainerOfAnd instance);
+    partial void InsertCurrentTrainerOfAnd1(CurrentTrainerOfAnd1 instance);
+    partial void UpdateCurrentTrainerOfAnd1(CurrentTrainerOfAnd1 instance);
+    partial void DeleteCurrentTrainerOfAnd1(CurrentTrainerOfAnd1 instance);
     #endregion
 		
 		public CurrentTrainerOfAndDataContext() : 
-				base(global::PlayersGenerator2.Properties.Settings.Default.AllPlayersConnectionString, mappingSource)
+				base(global::PlayersGenerator2.Properties.Settings.Default.AllPlayers_Nawfel_AJR_2_mdfConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -72,6 +75,14 @@ namespace PlayersGenerator2
 				return this.GetTable<CurrentTrainerOfAnd>();
 			}
 		}
+		
+		public System.Data.Linq.Table<CurrentTrainerOfAnd1> CurrentTrainerOfAnd1s
+		{
+			get
+			{
+				return this.GetTable<CurrentTrainerOfAnd1>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CurrentTrainerOfAnd")]
@@ -103,6 +114,140 @@ namespace PlayersGenerator2
     #endregion
 		
 		public CurrentTrainerOfAnd()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(50)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_age", DbType="Float")]
+		public System.Nullable<double> age
+		{
+			get
+			{
+				return this._age;
+			}
+			set
+			{
+				if ((this._age != value))
+				{
+					this.OnageChanging(value);
+					this.SendPropertyChanging();
+					this._age = value;
+					this.SendPropertyChanged("age");
+					this.OnageChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_exclub", DbType="NVarChar(50)")]
+		public string exclub
+		{
+			get
+			{
+				return this._exclub;
+			}
+			set
+			{
+				if ((this._exclub != value))
+				{
+					this.OnexclubChanging(value);
+					this.SendPropertyChanging();
+					this._exclub = value;
+					this.SendPropertyChanged("exclub");
+					this.OnexclubChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CurrentTrainerOfAnd")]
+	public partial class CurrentTrainerOfAnd1 : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _name;
+		
+		private System.Nullable<double> _age;
+		
+		private string _exclub;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnageChanging(System.Nullable<double> value);
+    partial void OnageChanged();
+    partial void OnexclubChanging(string value);
+    partial void OnexclubChanged();
+    #endregion
+		
+		public CurrentTrainerOfAnd1()
 		{
 			OnCreated();
 		}

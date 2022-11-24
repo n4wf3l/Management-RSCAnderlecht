@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.IO;
 
 namespace PlayersGenerator2
 {
@@ -18,6 +19,7 @@ namespace PlayersGenerator2
         {
             InitializeComponent();
         }
+        static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "AllPlayers-Nawfel-AJR-2.mdf"));
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -26,7 +28,7 @@ namespace PlayersGenerator2
 
         private void AllPlayers_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\source\\repos\\PlayersGenerator2\\PlayersGenerator2\\AllPlayers-Nawfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30");
             con.Open();
             SqlCommand cmd = new SqlCommand("Select * from AllPlayers", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.IO;
 
 namespace PlayersGenerator2
 {
@@ -34,7 +35,7 @@ namespace PlayersGenerator2
         private void button1_Click(object sender, EventArgs e)
         {
 
-            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection conn = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\source\\repos\\PlayersGenerator2\\PlayersGenerator2\\AllPlayers-Nawfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30");
             SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT (*) FROM tblLogin WHERE Username = '" + textBox1.Text + "' AND password = '" + textBox2.Text + "'", conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -84,6 +85,11 @@ namespace PlayersGenerator2
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mov = 0;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

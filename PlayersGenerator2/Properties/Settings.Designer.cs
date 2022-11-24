@@ -44,5 +44,16 @@ namespace PlayersGenerator2.Properties {
                 return ((string)(this["ProgrammingDBConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\AllPlayers-Na" +
+            "wfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string AllPlayers_Nawfel_AJR_2_mdfConnectionString {
+            get {
+                return ((string)(this["AllPlayers_Nawfel_AJR_2_mdfConnectionString"]));
+            }
+        }
     }
 }

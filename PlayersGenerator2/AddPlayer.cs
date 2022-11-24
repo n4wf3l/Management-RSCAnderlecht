@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace PlayersGenerator2
         {
             InitializeComponent();
         }
+                static string info = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, @"..\..\..\", "AllPlayers-Nawfel-AJR-2.mdf.mdf"));
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -25,7 +27,7 @@ namespace PlayersGenerator2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con1 = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\source\\repos\\PlayersGenerator2\\PlayersGenerator2\\AllPlayers-Nawfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30");
             con1.Open();
             SqlCommand cmd1 = new SqlCommand("insert into AllPlayers values (@Id,@name,@age,@club,@position)", con1);
             SqlDataAdapter da = new SqlDataAdapter(cmd1);
@@ -38,7 +40,7 @@ namespace PlayersGenerator2
             }
             else
             {
-                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\source\\repos\\PlayersGenerator2\\PlayersGenerator2\\AllPlayers-Nawfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30");
                 con.Open();
                 SqlCommand cmd = new SqlCommand("insert into AllPlayers values (@Id,@name,@age,@club,@position)", con);
                 cmd.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
@@ -50,7 +52,7 @@ namespace PlayersGenerator2
 
 
                 con.Close();
-                MessageBox.Show("Speler toegevoegd !");
+                MessageBox.Show("Speler is toegevoegd.");
                 this.Close();
             }
         }
@@ -63,7 +65,7 @@ namespace PlayersGenerator2
             }
             else
             {
-                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\source\\repos\\PlayersGenerator2\\PlayersGenerator2\\AllPlayers-Nawfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30");
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Update AllPlayers set name=@name, age= @age where Id = @Id", con);
 
@@ -75,7 +77,7 @@ namespace PlayersGenerator2
                 cmd.ExecuteNonQuery();
 
                 con.Close();
-                MessageBox.Show("Speler geüpdate !");
+                MessageBox.Show("Speler is geüpdate.");
                 this.Close();
             }
         }
@@ -87,7 +89,7 @@ namespace PlayersGenerator2
 
         private void button5_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+            SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\source\\repos\\PlayersGenerator2\\PlayersGenerator2\\AllPlayers-Nawfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30");
             con.Open();
             SqlCommand cmd = new SqlCommand("Select * from AllPlayers", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -111,13 +113,13 @@ namespace PlayersGenerator2
 
             else
             {
-                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\OneDrive\\Documenten\\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\ajari\\source\\repos\\PlayersGenerator2\\PlayersGenerator2\\AllPlayers-Nawfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30");
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Delete AllPlayers where Id=@Id", con);
                 cmd.Parameters.AddWithValue("@Id", int.Parse(textBox1.Text));
                 cmd.ExecuteNonQuery();
                 con.Close();
-                MessageBox.Show("Speler verwijderd !");
+                MessageBox.Show("Speler is verwijderd.");
                 this.Close();
             }
         }

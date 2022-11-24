@@ -1,7 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AllPlayers" Class="CurrentTrainerOfAndDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ajari\OneDrive\Documenten\AllPlayers.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="PlayersGenerator2.Properties.Settings" SettingsPropertyName="AllPlayersConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AllPlayers-Nawfel-AJR-2.mdf" Class="CurrentTrainerOfAndDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\AllPlayers-Nawfel-AJR-2.mdf.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="PlayersGenerator2.Properties.Settings" SettingsPropertyName="AllPlayers_Nawfel_AJR_2_mdfConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CurrentTrainerOfAnd" Member="CurrentTrainerOfAnds">
     <Type Name="CurrentTrainerOfAnd">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="age" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="exclub" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CurrentTrainerOfAnd" Member="CurrentTrainerOfAnd1s">
+    <Type Name="CurrentTrainerOfAnd1">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="age" Type="System.Double" DbType="Float" CanBeNull="true" />
